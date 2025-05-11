@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .star {
+      color: lightgray;
+    }
+
+    .star.checked {
+      color: gold;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+
+    .message-box {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .message-box h1 {
+      color: #28a745;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .message-box p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .message-box a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background: #28a745;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .message-box a:hover {
+      background: #218838;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" required></textarea>
+
+      <label>Rating:</label>
+      <div class="rating" id="rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+
+      <input type="hidden" id="ratingValue" name="rating" value="0">
+
+      <button type="submit">Submit Feedback</button>
+      <div class="message" id="messageBox"></div>
+
+    </form>
+
+<div class="message-box">
+    <h1></h1>
+    <p>your request is accepted succesfully</p>
+    <p>Please fill the below form</p>
+    <a href="available find food.html">Back to Home</a>
+  </div>
+
+
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('ratingValue');
+    const messageBox = document.getElementById('messageBox');
+    const form = document.getElementById('feedbackForm');
+
+    // Star click rating logic
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        ratingValue.value = star.dataset.value;
+
+        stars.forEach(s => s.classList.remove('checked'));
+        for (let i = 0; i < star.dataset.value; i++) {
+          stars[i].classList.add('checked');
+        }
+      });
+    });
+
+    // Form submission
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const feedback = document.getElementById('feedback').value.trim();
+      const rating = ratingValue.value;
+
+      // Validate
+      if (!name || !feedback || rating === "0") {
+        showMessage("Please fill all the fields and give a rating!", "error");
+        return;
+      }
+
+      // Show success message
+      showMessage("Thank you for your feedback, " + name + "! 🎉", "success");
+
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        form.reset();
+        ratingValue.value = 0;
+        stars.forEach(s => s.classList.remove('checked'));
+        messageBox.innerHTML = "";
+      }, 2000);
+    });
+
+    function showMessage(msg, type) {
+      messageBox.innerHTML = msg;
+      messageBox.className = "message " + type;
+    }
+  </script>
+
+<!-- <div class="message-box">
+    <h1>✅ Your Request is Accepted!</h1>
+    <p>Thank you for your feedback. We appreciate your input.</p>
+    <a href="available find food.html">Back to Home</a>
+  </div> -->
+  <!-- <a  href="home.html">back to home</a> -->
+</body>
+</html>
