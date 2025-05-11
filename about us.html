@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | FoodShare</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <path d="M21 10H3M16 2v8M8 2v8M12 14v7M8 14l4 4 4-4"></path>
+        </svg>
+        <span>FoodShare</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="how it works.html">How It Works</a></li>
+        <li><a href="donate.html">Donate Food</a></li>
+        <!-- <li><a href="available find food.html">Find Food</a></li> -->
+        <li><a href="about us.html">About Us</a></li>
+      </ul>
+
+      <div class="auth-buttons" id="authButtons">
+
+
+        <div class="auth-buttons">
+
+
+          <a href="#" class="signin" onclick="openModal('loginModal')">Sign In
+          </a>
+          <a href="#" class="signup" onclick="openModal('registerModal')">Sign Up</a>
+
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <div class="container">
+      <h1>About FoodShare</h1>
+      <p>
+        At FoodShare, our mission is simple — to reduce household food waste and help feed communities in need. We
+        believe that no one should go hungry while good food goes to waste.
+      </p>
+
+      <p>
+        Our platform connects donors who have surplus food with individuals and organizations that need it. Whether
+        you're a household, a local business, or a non-profit, you can play a role in making food sharing accessible and
+        impactful.
+      </p>
+
+      <h2>What We Do</h2>
+      <ul>
+        <li>Enable users to donate leftover or surplus food with ease</li>
+        <li>Connect people in need with available food near them</li>
+        <li>Encourage sustainable food practices in communities</li>
+      </ul>
+
+      <h2>Our Vision</h2>
+      <p>
+        We envision a world where technology helps communities fight hunger and waste — together.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p></p>
+  </footer>
+
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2 style="margin-bottom: 1.5rem;">Sign In</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" required>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 1rem;">
+          <a href="#" style="color: var(--primary);">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+
+        <p style="text-align: center; margin-top: 1.5rem;">
+          Don't have an account? <a href="#" style="color: var(--primary);"
+            onclick="switchModal('loginModal', 'registerModal')">Sign Up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2 style="margin-bottom: 1.5rem;">Create Account</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerName">Full Name</label>
+          <input type="text" id="registerName" class="form-control" required>
+        </div>
+        <!-- <div class="form-group">
+                    <label for="registerName">Society/ area name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div> -->
+
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="registerPhone">Phone Number</label>
+          <input type="tel" id="registerPhone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="registerLocation">Location/Zip Code</label>
+          <input type="text" id="registerLocation" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+
+        <p style="text-align: center; margin-top: 1.5rem;">
+          Already have an account? <a href="#" style="color: var(--primary);"
+            onclick="switchModal('registerModal', 'loginModal')">Sign In
+
+
+            <script src="script.js"></script>
+</body>
+
+</html>
