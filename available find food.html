@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <path d="M21 10H3M16 2v8M8 2v8M12 14v7M8 14l4 4 4-4"></path>
+                </svg>
+                <span>FoodShare</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="how it works.html">How It Works</a></li>
+                <li><a href="donate.html">Donate Food</a></li>
+                <!-- <li><a href="available find food.html">Find Food</a></li> -->
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+
+            <div class="auth-buttons" id="authButtons">
+
+
+                <div class="auth-buttons">
+
+
+                    <a href="#" class="signin" onclick="openModal('loginModal')">Sign In</a>
+                    <a href="#" class="signup" onclick="openModal('registerModal')">Sign Up</a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="listings" id="find">
+        <h2 class="section-title">Available Food Near You </h2>
+        <div class="food-cards">
+            <div class="food-card">
+                <div class="food-img" style="background-image: url('');"></div>
+                <div class="food-info">
+                    <h3>Fresh Vegetables</h3>
+                    <div class="food-meta">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>Assorted fresh vegetables from my garden. Too many to </p>
+                    <br>
+                    <br>
+                    <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">Accept</a>
+                    <!-- <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">feedback</a> -->
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-img" style="background-image: url('/api/placeholder/250/180');"></div>
+                <div class="food-info">
+                    <h3>Homemade Bread</h3>
+                    <div class="food-meta">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>Freshly baked sourdough bread. make too much</p>
+                    <br>
+                    <br>
+
+                    <a href="feedback.html" class="btn btn-primary" onclick="acceptRequest(1)">Accept</a>
+                    <!-- <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">feedback
+                     -->
+                        </a>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-img" style="background-image: url('/api/placeholder/250/180');"></div>
+                <div class="food-info">
+                    <h3>Canned Goods</h3>
+                    <div class="food-meta">
+                        <span></span>
+                        <span></span>
+
+                    </div>
+                    <p>Various canned goods, all unexpired and in good .</p>
+
+                    <br>
+                    <br>
+                    <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">Accept</a>
+                    <!-- <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">feedback -->
+
+                    </a>
+                    `
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-img" style="background-image: url('/api/placeholder/250/180');"></div>
+                <div class="food-info">
+                    <h3>Fresh Fruit</h3>
+                    <div class="food-meta">
+                        <span></span>
+                        <span> </span>
+                    </div>
+                    <p>Apples and oranges, more than my family can eat.</p>
+                    <br>
+                    <br>
+                    <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">Accept</a>
+                    <!-- <a href="feedback.html" class="btn btn-primary" onclick="openModal('requestModal')">feedback  -->
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Sign In</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required>
+                </div>
+
+                <div style="text-align: right; margin-bottom: 1rem;">
+                    <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Don't have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('loginModal', 'registerModal')">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="registerName">Society/ area name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input type="tel" id="registerPhone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerLocation">Location/Zip Code</label>
+                    <input type="text" id="registerLocation" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Already have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('registerModal', 'loginModal')">Sign In
+
+
+
+                        <script src="script.js"></script>
+
+</body>
+
+</html>
