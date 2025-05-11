@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>food redistribution </title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+
+    <header>
+        <nav>
+            <a class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <path d="M21 10H3M16 2v8M8 2v8M12 14v7M8 14l4 4 4-4"></path>
+                </svg>
+                <span>FoodShare</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="how it works.html">How It Works</a></li>
+                <li><a href="donate.html">Donate Food</a></li>
+                <!-- <li><a href="available find food.html">Find Food</a></li> -->
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+
+            <div class="auth-buttons" id="authButtons">
+
+
+                <div class="auth-buttons">
+
+
+                    <a href="#" class="signin" onclick="openModal('loginModal')">Sign In
+                    </a>
+                    <a href="#" class="signup" onclick="openModal('registerModal')">Sign Up</a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="food">
+        <h1>Reduce Food Waste, Feed Communities</h1>
+        <p>Join our mission to reduce household food waste and help those in need by sharing surplus food in your
+            community.</p>
+        <div class="cta-buttons">
+            <a href="donate.html" class="btn btn-primary">Donate Food</a>
+            <!-- <a href="available find food.html" class="btn btn-secondary">Find Food</a> -->
+        </div>
+    </section>
+
+
+
+
+    <section class="features" id="about">
+
+        <h2 class="section-title">Why Use FoodShare </h2>
+
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3>Reduce Food Waste</h3>
+                <p>"Save food from going to waste in your own kitchen "</p>
+            </div>
+            <div class="feature-card">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                </svg>
+                <h3>Help Those in Need</h3>
+                <p>Support families
+                    your surplu</p>
+            </div>
+            <div class="feature-card">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    ">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+
+
+                <h3>Quick & Easy</h3>
+                <p> </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FoodShare</h3>
+                <p>Reducing food waste and building community connections one meal at a time.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="how it works.html">How It Works</a>
+                <a href="donate.html">Donate Food</a>
+                <!-- <a href="available find food.html">Find Food</a> -->
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="#">Food Safety Guidelines</a>
+                <a href="#">Volunteer Opportunities</a>
+                <a href="#">Partner With Us</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: sharefood@gmail.com</p>
+                <p>Phone: 782801111</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>@  All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Sign In</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required>
+                </div>
+
+                <div style="text-align: right; margin-bottom: 1rem;">
+                    <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Don't have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('loginModal', 'registerModal')">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+   
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="registerName">Society/ area name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input type="tel" id="registerPhone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerLocation">Location/Zip Code</label>
+                    <input type="text" id="registerLocation" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerLocation">map location</label>
+                    <input type="text" id="registerLocation" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Already have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('registerModal', 'loginModal')">Sign In
+ 
+
+
+
+
+                        <script src="script.js"></script>
+</body>
+
+</html>
