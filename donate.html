@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <path d="M21 10H3M16 2v8M8 2v8M12 14v7M8 14l4 4 4-4"></path>
+                </svg>
+                <span>FoodShare</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="how it works.html">How It Works</a></li>
+                <li><a href="donate.html">Donate Food</a></li>
+                <!-- <li><a href="available find food.html">Find Food</a></li> -->
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+
+            
+            <div class="auth-buttons" id="authButtons">
+
+
+                <div class="auth-buttons">
+
+
+                    <a href="#" class="signin" onclick="openModal('loginModal')">Sign In</a>
+                    <a href="#" class="signup" onclick="openModal('registerModal')">Sign Up</a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    
+    
+    <section class="how-it-works" id="donate">
+        <h2 class="section-title">Donate Food</h2>
+        <div class="upload-form">
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab active" data-tab="donate-food">Donate Food</div>
+                    <div class="tab" data-tab="donate-money">Support Our Mission</div>
+                </div>
+
+                <div class="tab-content active" id="donate-food">
+                    <form id="foodDonationForm">
+                        <div class="form-group">
+                            <label for="foodTitle">SOCIETY/AREA/LANDMARK</label>
+                            <input type="text" id="foodTitle" class="form-control"
+                                placeholder="E.g. Fresh Vegetables, Canned Goods" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodTitle">HOUSE/FLAT/BLOCK NO.</label>
+                            <input type="text" id="foodTitle" class="form-control"
+                                placeholder="E.g. Fresh Vegetables, Canned Goods" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodTitle">Food Title</label>
+                            <input type="text" id="foodTitle" class="form-control"
+                                placeholder="E.g. Fresh Vegetables, Canned Goods" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foodDescription">Description</label>
+                            <textarea id="foodDescription" class="form-control"
+                                placeholder="Describe the food items, quantity, and any relevant details..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expiryDate">FOOD READY TIME</label>
+                            <input type="date" id="expiryDate" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Images</label>
+                            <div class="image-upload" id="imageUploadArea">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    style="color: #aaa; margin: 0 auto 1rem;">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Click to upload photos or drag and drop</p>
+                                <input type="file" id="imageUpload" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="upload-preview" id="imagePreview"></div>
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <label for="pickupLocation">Pickup Location</label>
+                           
+                                <input type="text" id="pickupLocation" class="form-control"
+                                placeholder="Enter your address or a nearby landmark" required>
+                            
+                        </div>
+
+                        <div class="form-group">
+    <label for="pickupTimes">Available Pickup Times</label>
+    <select id="pickupTimes" class="form-control" required>
+        <option value="">Select a time slot</option>
+        <option value="Weekdays after 5pm"> 10:00 am to 11:00 am </option>
+        <option value="Saturday morning">08:00 pm to 09:00 pm</option>
+        
+    </select>
+</div>
+
+
+                        <button type="submit" class="btn btn-primary">List Food Donation</button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="donate-money">
+                    <p>Support our mission with a financial contribution. Your donation helps us maintain this platform
+                        and expand our reach to reduce food waste and fight hunger.</p>
+                    <form id="financialDonationForm" style="margin-top: 2rem;">
+                        <div class="form-group">
+                            <label>Select Amount</label>
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                                <button type="button" class="btn btn-secondary donation-amount"
+                                    data-amount="5">50</button>
+                                <button type="button" class="btn btn-secondary donation-amount"
+                                    data-amount="10">100</button>
+                                <button type="button" class="btn btn-secondary donation-amount"
+                                    data-amount="25">150</button>
+                                <button type="button" class="btn btn-secondary donation-amount"
+                                    data-amount="50">200</button>
+                            </div>
+                            <input type="number" class="form-control" id="customAmount" placeholder="Custom amount"
+                                min="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donorName">Name</label>
+                            <input type="text" id="donorName" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donorEmail">Email</label>
+                            <input type="email" id="donorEmail" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardDetails">Card Details</label>
+                            <input type="text" id="cardDetails" class="form-control" placeholder="Card Number" required>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="cardExpiry">Expiry Date</label>
+                                <input type="text" id="cardExpiry" class="form-control" placeholder="MM/YY" required>
+                            </div>
+
+                            <div class="form-group" style="flex: 1;">
+                                <label for="cardCVC">CVC</label>
+                                <input type="text" id="cardCVC" class="form-control" placeholder="CVC" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Process Donation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Sign In</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required>
+                </div>
+
+                <div style="text-align: right; margin-bottom: 1rem;">
+                    <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Don't have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('loginModal', 'registerModal')">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+   
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="registerName">Society/ area name</label>
+                    <input type="text" id="registerName" class="form-control" required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input type="tel" id="registerPhone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerLocation">Location/Zip Code</label>
+                    <input type="text" id="registerLocation" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Already have an account? <a href="#" style="color: var(--primary);"
+                        onclick="switchModal('registerModal', 'loginModal')">Sign In
+ 
+
+
+
+    <script src="script.js"></script>#
+</body>
+</html>
